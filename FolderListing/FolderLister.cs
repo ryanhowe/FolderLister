@@ -25,7 +25,7 @@ namespace FolderListing
         private void buttonFolder_Click(object sender, EventArgs e)
         {
             var browser = new FolderBrowserDialog();
-            if (DialogResult.OK== browser.ShowDialog())
+            if (DialogResult.OK == browser.ShowDialog())
             {
                 textBoxFolderPath.Text = browser.SelectedPath;
             }
@@ -43,11 +43,38 @@ namespace FolderListing
 
         private void buttonOK_Click(object sender, EventArgs e)
         {
+            if (!ValidateSelections())
+                return;
+
             var folderReader = new Reader(textBoxFolderPath.Text);
             var files = folderReader.ReadFiles();
             var writer = new Writer(textBoxSaveAs.Text, files);
             writer.Write();
-            MessageBox.Show("Report complete", "Complete", MessageBoxButtons.OK,MessageBoxIcon.Information,MessageBoxDefaultButton.Button1);
+            MessageBox.Show("Report complete", "Complete", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+        }
+
+        private bool ValidateSelections()
+        {
+            var valid = true;
+            if (String.IsNullOrEmpty(textBoxFolderPath.Text.Trim()))
+            {
+                errorProvider1.SetError(textBoxFolderPath, "Please specify folder to list");
+                valid = false;
+            }
+
+            else
+                errorProvider1.SetError(textBoxFolderPath, "");
+
+            if (String.IsNullOrEmpty(textBoxSaveAs.Text.Trim()))
+            {
+                errorProvider1.SetError(textBoxSaveAs, "Please specify where to save listing");
+                valid = false;
+            }
+
+            else
+                errorProvider1.SetError(textBoxSaveAs, "");
+
+            return valid;
         }
     }
 }

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FolderLister));
             this.buttonFolder = new System.Windows.Forms.Button();
             this.buttonSaveAs = new System.Windows.Forms.Button();
@@ -39,11 +40,13 @@
             this.buttonCancel = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // buttonFolder
             // 
-            this.buttonFolder.Location = new System.Drawing.Point(372, 44);
+            this.buttonFolder.Location = new System.Drawing.Point(383, 44);
             this.buttonFolder.Name = "buttonFolder";
             this.buttonFolder.Size = new System.Drawing.Size(75, 23);
             this.buttonFolder.TabIndex = 0;
@@ -53,7 +56,7 @@
             // 
             // buttonSaveAs
             // 
-            this.buttonSaveAs.Location = new System.Drawing.Point(372, 90);
+            this.buttonSaveAs.Location = new System.Drawing.Point(383, 90);
             this.buttonSaveAs.Name = "buttonSaveAs";
             this.buttonSaveAs.Size = new System.Drawing.Size(75, 23);
             this.buttonSaveAs.TabIndex = 1;
@@ -132,6 +135,11 @@
             this.label4.Text = "The listing with create a .csv file containing all the files in the selected fold" +
     "er";
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.errorProvider1.ContainerControl = this;
+            // 
             // FolderLister
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -151,6 +159,7 @@
             this.Name = "FolderLister";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Folder Lister";
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -168,6 +177,7 @@
         private System.Windows.Forms.Button buttonCancel;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }
 
