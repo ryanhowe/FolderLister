@@ -10,8 +10,14 @@ using FolderReader;
 
 namespace FolderListing
 {
+    /// <summary>
+    /// Form to prompt user for folder to list and where to save listing
+    /// </summary>
     public partial class FolderLister : Form
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="FolderLister" /> class.
+        /// </summary>
         public FolderLister()
         {
             InitializeComponent();

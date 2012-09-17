@@ -6,14 +6,25 @@ using System.Text;
 
 namespace FolderReader
 {
+    /// <summary>
+    /// Write the files names to file
+    /// </summary>
     public class Writer
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Writer" /> class.
+        /// </summary>
+        /// <param name="outputPath">The output path.</param>
+        /// <param name="files">The files to list.</param>
         public Writer(string outputPath, IEnumerable<string> files)
         {
             OutputPath = outputPath;
             Files = files;
         }
 
+        /// <summary>
+        /// Create file
+        /// </summary>
         public void Write()
         {
             var listing = GenerateListing();
@@ -33,8 +44,20 @@ namespace FolderReader
             return sb.ToString();
         }
 
+        /// <summary>
+        /// Gets or sets the files.
+        /// </summary>
+        /// <value>
+        /// The files.
+        /// </value>
         public IEnumerable<string> Files { get; set; }
 
+        /// <summary>
+        /// Gets or sets the output path.
+        /// </summary>
+        /// <value>
+        /// The output path.
+        /// </value>
         public string OutputPath { get; set; }
     }
 }
