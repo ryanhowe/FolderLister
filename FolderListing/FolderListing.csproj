@@ -79,9 +79,9 @@
     <None Include="README" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\FolderReader\FolderReader.csproj">
+    <ProjectReference Include="..\FolderReader\FolderReaderWriter.csproj">
       <Project>{4b283096-3752-46d5-9c29-d845b80b9a27}</Project>
-      <Name>FolderReader</Name>
+      <Name>FolderReaderWriter</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

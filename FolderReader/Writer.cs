@@ -4,7 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 
-namespace FolderReader
+namespace FolderReaderWriter
 {
     /// <summary>
     /// Write the files names to file

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.IO;
 
-namespace FolderReader
+namespace FolderReaderWriter
 {
     /// <summary>
     /// Read the contents of a folder and collect list of all files
