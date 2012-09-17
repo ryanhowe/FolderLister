@@ -1,0 +1,2 @@
+Quick one off project to generate a CSV report of all files in a specified folder.
+Allows user to choose the folder to read and where to save the CSV report.
